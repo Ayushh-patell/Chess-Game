@@ -1,0 +1,377 @@
+@media screen and (min-width: 1000px) {
+    body {
+        flex-direction: row;
+    }
+
+    .side_1 {
+        height: min(85vh, 85vw);
+        width: 8vw;
+    }
+
+    .side_2 {
+        height: min(85vh, 85vw);
+        width: 8vw;
+    }
+    .box1 {
+        flex-direction: column;
+    }
+    .box2 {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        flex-direction: column;
+    }
+
+    .side_1 {
+        width: min(85vh, 85vw);
+        height: 8vh;
+    }
+
+    .side_2 {
+        width: min(85vh, 85vw);
+        height: 8vh;
+    }
+    .box1 {
+        flex-direction: row;
+    }
+    .box2 {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 340px) {
+    .side_1 {
+        font-size: 0.9rem;
+    }
+
+    .side_2 {
+        font-size: 0.9rem;
+    }
+
+    .chess .file .block span {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .side_1 {
+        font-size: 0.6rem;
+    }
+
+    .side_2 {
+        font-size: 0.6rem;
+    }
+
+    .chess .file .block span {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 260px) {
+    .chess .file .block span {
+        font-size: 0.4rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side_1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.319);
+}
+.side_1 span {
+    margin-top: 5px;
+    font-family: 'Ysabeau SC', sans-serif;
+
+}
+.side_1 span ion-icon {
+    margin-left: 2px;
+    position: relative;
+    bottom: -2px;
+}
+
+.side_2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.312);
+}
+.side_2 span {
+    margin-top: 5px;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+.side_2 span ion-icon {
+    margin-left: 2px;
+    position: relative;
+    bottom: -2px;
+}
+
+.eliminated {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    width: 90%;
+    height: 90%;
+}
+.box1 {
+    position: relative;
+    display: flex;
+    justify-content: space-around ;
+    height: 100%;
+    width: 45%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.344);
+}
+.box2 {
+    position: relative;
+    display: flex;
+    justify-content: space-around ;
+    height: 100%;
+    width: 45%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.344);
+}
+
+.container {
+    width: min(85vh, 85vw);
+    height: min(85vh, 85vw);
+    aspect-ratio: 1/1;
+    background-color: rgb(58, 56, 56);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.win {
+    position: absolute;
+    width: 60%;
+    height: 20%;
+    background-color: rgb(255, 205, 0);
+    z-index: 100;
+    border-radius: 5px;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(.76,.05,.86,.06);
+    box-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgba(0, 0, 0, 0.553);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.chess {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(240, 248, 255, 0.359);
+    display: flex;
+
+}
+
+.chess .file {
+    position: relative;
+    height: 100%;
+    width: calc(100%/8);
+}
+
+.chess .file .block {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: calc(100%/8);
+}
+
+.chess .file .block span {
+    position: absolute;
+    color: gray;
+}
+
+/* adding piece images of black pieces */
+.pawn-player1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_pawn.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(1);
+}
+
+.rook-player1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_rook.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(1);
+}
+
+.knight-player1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_knight.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(1);
+}
+
+.bishop-player1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_bishop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(1);
+}
+
+.queen-player1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_queen.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(1);
+}
+
+.king-player1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_king.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(1);
+}
+
+/* adding piece images of white pieces */
+.pawn-player2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_pawn.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.rook-player2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_rook.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.knight-player2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_knight.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bishop-player2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_bishop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.queen-player2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_queen.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.king-player2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/Chess_Pieces_king.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.hint::after {
+    content: "";
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: rgba(128, 128, 128, 0.607);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.hint::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.piece {
+    cursor: pointer;
+}
